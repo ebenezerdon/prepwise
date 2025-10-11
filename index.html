@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PrepWise — Weekly Meal Prep Planner</title>
+  <meta name="description" content="PrepWise helps you plan a week of meals, balance servings, and intelligently use leftovers.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="styles/main.css">
+  <style type="text/tailwindcss" data-teda="tailwind-apply">
+    @layer components {
+      .btn-primary { @apply bg-emerald-600 text-white text-sm px-3 py-1.5 rounded-md shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-200; }
+      .btn-ghost { @apply bg-white border border-gray-200 text-sm px-2.5 py-1.5 rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-emerald-100; }
+      .card { @apply bg-white rounded-2xl shadow-lg p-6; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-white via-amber-50 to-white min-h-screen text-gray-800 leading-relaxed">
+  <header class="max-w-7xl mx-auto p-6 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3" aria-label="PrepWise home">
+      <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white font-semibold shadow-inner">PW</div>
+      <div class="hidden sm:block">
+        <h1 class="text-xl font-semibold">PrepWise</h1>
+        <p class="text-sm text-gray-500">Smart weekly meal prep</p>
+      </div>
+    </a>
+    <nav class="flex items-center gap-3">
+      <a href="app.html" class="btn-primary" aria-label="Open planner">Open Planner</a>
+      <a href="#features" class="btn-ghost">Features</a>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div class="card transform-gpu hover:-translate-y-2 transition-all duration-400" role="region" aria-labelledby="hero-title">
+        <h2 id="hero-title" class="text-3xl sm:text-4xl font-extrabold leading-tight">Make a week of meals that actually fits your life</h2>
+        <p class="mt-4 text-gray-600">PrepWise balances freshly prepared servings and leftovers so you cook less, eat better, and never waste food. Add dishes once, then let the planner distribute servings across the week.</p>
+
+        <div class="mt-6 flex gap-3">
+          <a href="app.html" class="btn-primary" id="cta-open">Start planning</a>
+          <a href="#how" class="btn-ghost">How it works</a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-3 gap-3">
+          <div class="p-3 rounded-md bg-emerald-50">
+            <strong class="block text-emerald-700">Save time</strong>
+            <small class="text-gray-500">Smart leftovers allocation</small>
+          </div>
+          <div class="p-3 rounded-md bg-amber-50">
+            <strong class="block text-amber-700">Eat better</strong>
+            <small class="text-gray-500">Balanced nutrition view</small>
+          </div>
+          <div class="p-3 rounded-md bg-sky-50">
+            <strong class="block text-sky-700">Plan faster</strong>
+            <small class="text-gray-500">One-click distribution</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="card relative overflow-hidden">
+        <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-emerald-100 opacity-60 transform rotate-12"></div>
+        <div class="relative z-10">
+          <div class="text-sm text-gray-500">Interactive preview</div>
+          <div class="mt-4 bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-md bg-emerald-600 text-white flex items-center justify-center font-semibold">M</div>
+              <div>
+                <div class="font-semibold">Weekly Grid</div>
+                <div class="text-xs text-gray-500">Shows days, meals, and leftover tracking</div>
+              </div>
+            </div>
+
+            <div class="mt-4 grid grid-cols-7 gap-1 text-xs text-center">
+              <div class="py-2 px-1 rounded bg-emerald-50 text-emerald-800">Mon</div>
+              <div class="py-2 px-1 rounded bg-emerald-50 text-emerald-800">Tue</div>
+              <div class="py-2 px-1 rounded bg-emerald-50 text-emerald-800">Wed</div>
+              <div class="py-2 px-1 rounded bg-amber-50 text-amber-800">Thu</div>
+              <div class="py-2 px-1 rounded bg-amber-50 text-amber-800">Fri</div>
+              <div class="py-2 px-1 rounded bg-sky-50 text-sky-800">Sat</div>
+              <div class="py-2 px-1 rounded bg-sky-50 text-sky-800">Sun</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <article class="card">
+        <h3 class="font-semibold">Add or import dishes</h3>
+        <p class="mt-2 text-gray-600 text-sm">Create dishes with total servings prepared and suggested servings per meal.</p>
+      </article>
+      <article class="card">
+        <h3 class="font-semibold">Auto-distribute servings</h3>
+        <p class="mt-2 text-gray-600 text-sm">The planner spreads servings across the week to minimize repeats and use leftovers first.</p>
+      </article>
+      <article class="card">
+        <h3 class="font-semibold">Fine tune and export</h3>
+        <p class="mt-2 text-gray-600 text-sm">Edit any day, mark leftovers, and export your week to share or save.</p>
+      </article>
+    </section>
+
+    <footer class="mt-12 text-center text-sm text-gray-500">
+      Built with care by <a href="https://teda.dev" class="text-emerald-600 hover:underline">Teda.dev</a>. Ready to plan your week? <a href="app.html" class="text-emerald-700 font-medium">Open the planner</a>.
+    </footer>
+  </main>
+
+  <script>
+    // subtle micro-interaction: smooth scroll for in-page anchors
+    $(function(){
+      $('a[href^="#"]').on('click', function(e){
+        const target = $(this.getAttribute('href'));
+        if (target.length) {
+          e.preventDefault();
+          $('html,body').animate({ scrollTop: target.offset().top - 20 }, 500);
+        }
+      });
+    });
+  <\/script>
+  <script src="scripts/helpers.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
